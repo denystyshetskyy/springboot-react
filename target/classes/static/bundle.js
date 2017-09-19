@@ -65,9 +65,13 @@
 	
 	var _FlightList2 = _interopRequireDefault(_FlightList);
 	
+	var _FlightSearch = __webpack_require__(162);
+	
+	var _FlightSearch2 = _interopRequireDefault(_FlightSearch);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_reactDom2.default.render(_react2.default.createElement(_FlightList2.default, null), document.querySelector('.container'));
+	_reactDom2.default.render(_react2.default.createElement(_FlightSearch2.default, null), document.querySelector('.container'));
 
 /***/ }),
 /* 2 */
@@ -19803,7 +19807,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, (FlightList.__proto__ || Object.getPrototypeOf(FlightList)).call(this, props));
 	
-	    _this.state = { flights: [] };
+	    _this.state = { flightsData: [] };
 	    return _this;
 	  }
 	
@@ -19813,15 +19817,40 @@
 	      var _this2 = this;
 	
 	      fetch('http://localhost:8095/v2/flights').then(function (result) {
-	        _this2.setState({ flights: result });
+	        return result.json();
+	      }).then(function (flights) {
+	
+	        var flightsTmp = flights.map(function (flight) {
+	          return _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'th',
+	              null,
+	              flight.name
+	            ),
+	            _react2.default.createElement(
+	              'th',
+	              null,
+	              flight.destination
+	            ),
+	            _react2.default.createElement(
+	              'th',
+	              null,
+	              flight.departure
+	            )
+	          );
+	        });
+	
+	        _this2.setState({ flightsData: flightsTmp });
+	        console.log('flights', _this2.state.flightsData);
 	      });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var flightElements = this.state.flights.map(function (flight) {
-	        return _react2.default.createElement(_Flight2.default, { flight: flight });
-	      });
+	      console.log('In Render');
+	      //    var flightElements = this.state.flightsData.map(flight => <Flight flight={flight}/>);
 	
 	      return _react2.default.createElement(
 	        'table',
@@ -19848,7 +19877,15 @@
 	              'Departure'
 	            )
 	          ),
-	          flightElements
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'th',
+	              null,
+	              this.state.flightsData
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -19891,6 +19928,7 @@
 		_createClass(Flight, [{
 			key: 'render',
 			value: function render() {
+				console.log('In flight');
 				return _react2.default.createElement(
 					'tr',
 					null,
@@ -19898,16 +19936,6 @@
 						'td',
 						null,
 						this.props.flight.name
-					),
-					_react2.default.createElement(
-						'td',
-						null,
-						this.props.flight.destination
-					),
-					_react2.default.createElement(
-						'td',
-						null,
-						this.props.employee.departure
 					)
 				);
 			}
@@ -19915,6 +19943,76 @@
 	
 		return Flight;
 	}(_react2.default.Component);
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var FlightSearch = function (_React$Component) {
+	    _inherits(FlightSearch, _React$Component);
+	
+	    function FlightSearch(props) {
+	        _classCallCheck(this, FlightSearch);
+	
+	        var _this = _possibleConstructorReturn(this, (FlightSearch.__proto__ || Object.getPrototypeOf(FlightSearch)).call(this));
+	
+	        _this.state = {
+	            // Takes active tab from props if it is defined there
+	            activeTab: props.activeTab || 1
+	        };
+	        return _this;
+	    }
+	
+	    _createClass(FlightSearch, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                null,
+	                _react2.default.createElement("input", { type: "text" }),
+	                _react2.default.createElement(
+	                    "select",
+	                    null,
+	                    _react2.default.createElement(
+	                        "option",
+	                        { value: "software" },
+	                        "Apps"
+	                    ),
+	                    _react2.default.createElement(
+	                        "option",
+	                        { value: "movie" },
+	                        "Films"
+	                    )
+	                ),
+	                _react2.default.createElement("input", { type: "submit" })
+	            );
+	        }
+	    }]);
+	
+	    return FlightSearch;
+	}(_react2.default.Component);
+	
+	exports.default = FlightSearch;
 
 /***/ })
 /******/ ]);
