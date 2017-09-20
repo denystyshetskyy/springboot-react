@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.vaadin:vaadin-client-compiled:8.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-client-compiled/8.0-SNAPSHOT/vaadin-client-compiled-8.0-20170714.000325-172.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-client-compiled/8.0-SNAPSHOT/vaadin-client-compiled-8.0-20170714.000325-172-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-client-compiled/8.0-SNAPSHOT/vaadin-client-compiled-8.0-20170714.000325-172-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
