@@ -1,4 +1,9 @@
-nz/denys/reactjs/spring/VaadinUi.class
-nz/denys/reactjs/spring/ReactController.class
-nz/denys/reactjs/spring/Configuration.class
-nz/denys/reactjs/spring/Application.class
+nz\denys\reactjs\spring\Configuration.class
+nz\denys\reactjs\spring\views\FlightDetailsView.class
+nz\denys\reactjs\spring\views\Greeter.class
+nz\denys\reactjs\spring\views\UIScopedView.class
+nz\denys\reactjs\spring\views\VaadinUi.class
+nz\denys\reactjs\spring\views\DefaultView.class
+nz\denys\reactjs\spring\service\FlightConnectionService.class
+nz\denys\reactjs\spring\Application.class
+nz\denys\reactjs\spring\service\impl\FlightConnectionServiceImpl.class

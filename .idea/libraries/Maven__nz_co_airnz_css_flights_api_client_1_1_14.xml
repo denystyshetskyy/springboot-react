@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: nz.co.airnz.css:flights-api-client:1.1.14">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/nz/co/airnz/css/flights-api-client/1.1.14/flights-api-client-1.1.14.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/nz/co/airnz/css/flights-api-client/1.1.14/flights-api-client-1.1.14-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/nz/co/airnz/css/flights-api-client/1.1.14/flights-api-client-1.1.14-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
