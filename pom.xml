@@ -18,7 +18,7 @@
         <frontend-plugin.version>0.0.27</frontend-plugin.version>
         <node.version>v5.7.0</node.version>
         <npm.version>3.7.1</npm.version>
-        <vaadin.version>8.1.0</vaadin.version>
+        <vaadin.version>8.14.1</vaadin.version>
     </properties>
 
     <parent>
